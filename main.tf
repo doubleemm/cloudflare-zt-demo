@@ -17,12 +17,3 @@ module "gcp-instance" {
   enable_monitoring           = var.enable_monitoring
 }
 
-module "cloudflare" {
-  source="./modules/cloudflare"
-
-  cloudflare_api_token      = var.cloudflare_api_token
-  cloudflare_account_id     = var.cloudflare_account_id
-  cloudflare_tunnel01_name  = var.cloudflare_tunnel01_name
-  cloudflare_tunnel02_name  = var.cloudflare_tunnel02_name
-}
-

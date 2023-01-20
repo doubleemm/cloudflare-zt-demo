@@ -10,15 +10,6 @@ variable "cloudflare_account_id" {
     sensitive = true
 }
 
-variable "cloudflare_tunnel01_name" {
-    type = string
-}
-
-variable "cloudflare_tunnel02_name" {
-    type = string
-}
-
-
 # --- Google Provider ---
 variable "service_account_path" {
   type = string
