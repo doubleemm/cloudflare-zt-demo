@@ -3,8 +3,12 @@ output "server_ip" {
     value = module.gcp-instance[*].server_ip
 }
 
-output "tunnel_token" {
-  value = module.cloudflare.tunnel_token
+output "tunnel_token01" {
+  value = module.cloudflare.tunnel_token01
+}
+
+output "tunnel_token02" {
+  value = module.cloudflare.tunnel_token02
 }
 
 output "tunnel_secret" {

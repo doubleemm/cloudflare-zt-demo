@@ -7,8 +7,10 @@
 //
 // Apply the settings with [terraform apply -var-file="secret.tfvars"]
 
-cloudflare_tunnel01_name    = "demo-tunnel-win01"
-cloudflare_tunnel02_name    = "demo-tunnel-win02"
+cloudflare_tunnel01_name    = "zt-demo-tunnel-win01"
+cloudflare_tunnel02_name    = "zt-demo-tunnel-win02"
+cloudflare_zone             = "mike-demo.uk"
+cloudflare_email            = "mmajunke@cloudflare.com"
 
 # ---- GCP PROVIDER ---- #
 service_account_path        = "/Users/mmajunke/.config/gcloud/application_default_credentials.json"

@@ -31,9 +31,16 @@ resource "google_compute_instance" "vm" {
     }
   }
 
-metadata = {
+metadata = count.index == 0 ? {
     sysprep-specialize-script-ps1 = file("${path.module}/sysprep-specialize-script-ps1.ps1")
-    windows-startup-script-ps1 = file("${path.module}/windows-startup-script-ps1.ps1")
+    windows-startup-script-ps1 = templatefile("${path.module}/windows-startup-script-ps1.ps1",{
+      tunnel_token  = var.cf_tunnel_token01
+    })
+  } : {
+    sysprep-specialize-script-ps1 = file("${path.module}/sysprep-specialize-script-ps1.ps1")
+    windows-startup-script-ps1 = templatefile("${path.module}/windows-startup-script-ps1.ps1",{
+      tunnel_token  = var.cf_tunnel_token02
+    })
   }
 }
 

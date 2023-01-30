@@ -62,3 +62,11 @@ variable "disk_size" {
  variable "enable_monitoring" {
    type = bool
  }
+
+ variable "cf_tunnel_token01" {
+   type = string
+ }
+
+  variable "cf_tunnel_token02" {
+   type = string
+ }
