@@ -1,0 +1,303 @@
+{
+  "version": 4,
+  "terraform_version": "1.3.9",
+  "serial": 22,
+  "lineage": "f83f96db-9ba5-ba03-e3c6-70b6cc36bf71",
+  "outputs": {},
+  "resources": [
+    {
+      "module": "module.cloudflare",
+      "mode": "managed",
+      "type": "cloudflare_argo_tunnel",
+      "name": "zt-demo-srv-win01",
+      "provider": "module.cloudflare.provider[\"registry.terraform.io/cloudflare/cloudflare\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "account_id": "89dde92308b66c84ec4479fe58ecf421",
+            "cname": "81ac3082-41d8-4b6f-826a-8057f0c35fee.cfargotunnel.com",
+            "id": "81ac3082-41d8-4b6f-826a-8057f0c35fee",
+            "name": "zt-demo-tunnel-win01",
+            "secret": "zZex5qGXoe9owTynsBdgLBQ0LxqfpB3ukoDXW3+lC6E=",
+            "tunnel_token": "eyJhIjoiODlkZGU5MjMwOGI2NmM4NGVjNDQ3OWZlNThlY2Y0MjEiLCJ0IjoiODFhYzMwODItNDFkOC00YjZmLTgyNmEtODA1N2YwYzM1ZmVlIiwicyI6InpaZXg1cUdYb2U5b3dUeW5zQmRnTEJRMEx4cWZwQjN1a29EWFczK2xDNkU9In0="
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "account_id"
+              }
+            ]
+          ],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.cloudflare.random_id.tunnel_secret"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.cloudflare",
+      "mode": "managed",
+      "type": "cloudflare_argo_tunnel",
+      "name": "zt-demo-srv-win02",
+      "provider": "module.cloudflare.provider[\"registry.terraform.io/cloudflare/cloudflare\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "account_id": "89dde92308b66c84ec4479fe58ecf421",
+            "cname": "f401a998-4926-4897-b865-38c99eebb97e.cfargotunnel.com",
+            "id": "f401a998-4926-4897-b865-38c99eebb97e",
+            "name": "zt-demo-tunnel-win02",
+            "secret": "zZex5qGXoe9owTynsBdgLBQ0LxqfpB3ukoDXW3+lC6E=",
+            "tunnel_token": "eyJhIjoiODlkZGU5MjMwOGI2NmM4NGVjNDQ3OWZlNThlY2Y0MjEiLCJ0IjoiZjQwMWE5OTgtNDkyNi00ODk3LWI4NjUtMzhjOTllZWJiOTdlIiwicyI6InpaZXg1cUdYb2U5b3dUeW5zQmRnTEJRMEx4cWZwQjN1a29EWFczK2xDNkU9In0="
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "account_id"
+              }
+            ]
+          ],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.cloudflare.random_id.tunnel_secret"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.cloudflare",
+      "mode": "managed",
+      "type": "cloudflare_record",
+      "name": "zt-demo-rdp01-dns",
+      "provider": "module.cloudflare.provider[\"registry.terraform.io/cloudflare/cloudflare\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "allow_overwrite": false,
+            "comment": "",
+            "created_on": "2023-02-23T13:32:31.433516Z",
+            "data": [],
+            "hostname": "rdpwin01.mike-demo.uk",
+            "id": "34d8927bedd04e00cf63935e86741e52",
+            "metadata": {
+              "auto_added": "false",
+              "managed_by_apps": "false",
+              "managed_by_argo_tunnel": "false",
+              "source": "primary"
+            },
+            "modified_on": "2023-02-23T13:32:31.433516Z",
+            "name": "rdpwin01",
+            "priority": null,
+            "proxiable": true,
+            "proxied": true,
+            "tags": [],
+            "timeouts": null,
+            "ttl": 1,
+            "type": "CNAME",
+            "value": "81ac3082-41d8-4b6f-826a-8057f0c35fee.cfargotunnel.com",
+            "zone_id": "4a20d37f8c00bfcedced6fef9bcd6d13"
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "zone_id"
+              }
+            ]
+          ],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMCwidXBkYXRlIjozMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMiJ9",
+          "dependencies": [
+            "module.cloudflare.cloudflare_argo_tunnel.zt-demo-srv-win01",
+            "module.cloudflare.random_id.tunnel_secret"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.cloudflare",
+      "mode": "managed",
+      "type": "cloudflare_record",
+      "name": "zt-demo-rdp02-dns",
+      "provider": "module.cloudflare.provider[\"registry.terraform.io/cloudflare/cloudflare\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "allow_overwrite": false,
+            "comment": "",
+            "created_on": "2023-02-23T13:32:30.958073Z",
+            "data": [],
+            "hostname": "rdpwin02.mike-demo.uk",
+            "id": "d1ccad4f2cb1e16b9e33e55289997a48",
+            "metadata": {
+              "auto_added": "false",
+              "managed_by_apps": "false",
+              "managed_by_argo_tunnel": "false",
+              "source": "primary"
+            },
+            "modified_on": "2023-02-23T13:32:30.958073Z",
+            "name": "rdpwin02",
+            "priority": null,
+            "proxiable": true,
+            "proxied": true,
+            "tags": [],
+            "timeouts": null,
+            "ttl": 1,
+            "type": "CNAME",
+            "value": "f401a998-4926-4897-b865-38c99eebb97e.cfargotunnel.com",
+            "zone_id": "4a20d37f8c00bfcedced6fef9bcd6d13"
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "zone_id"
+              }
+            ]
+          ],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMCwidXBkYXRlIjozMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMiJ9",
+          "dependencies": [
+            "module.cloudflare.cloudflare_argo_tunnel.zt-demo-srv-win02",
+            "module.cloudflare.random_id.tunnel_secret"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.cloudflare",
+      "mode": "managed",
+      "type": "cloudflare_tunnel_config",
+      "name": "zt-demo-srv-win01-config",
+      "provider": "module.cloudflare.provider[\"registry.terraform.io/cloudflare/cloudflare\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "account_id": "89dde92308b66c84ec4479fe58ecf421",
+            "config": [
+              {
+                "ingress_rule": [
+                  {
+                    "hostname": "rdpwin01.mike-demo.uk",
+                    "path": "",
+                    "service": "rdp://localhost:3389"
+                  },
+                  {
+                    "hostname": "",
+                    "path": "",
+                    "service": "http_status:404"
+                  }
+                ],
+                "origin_request": [],
+                "warp_routing": [
+                  {
+                    "enabled": true
+                  }
+                ]
+              }
+            ],
+            "id": "81ac3082-41d8-4b6f-826a-8057f0c35fee",
+            "tunnel_id": "81ac3082-41d8-4b6f-826a-8057f0c35fee"
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "account_id"
+              }
+            ]
+          ],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.cloudflare.cloudflare_argo_tunnel.zt-demo-srv-win01",
+            "module.cloudflare.cloudflare_record.zt-demo-rdp01-dns",
+            "module.cloudflare.random_id.tunnel_secret"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.cloudflare",
+      "mode": "managed",
+      "type": "cloudflare_tunnel_config",
+      "name": "zt-demo-srv-win02-config",
+      "provider": "module.cloudflare.provider[\"registry.terraform.io/cloudflare/cloudflare\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "account_id": "89dde92308b66c84ec4479fe58ecf421",
+            "config": [
+              {
+                "ingress_rule": [
+                  {
+                    "hostname": "rdpwin02.mike-demo.uk",
+                    "path": "",
+                    "service": "rdp://localhost:3389"
+                  },
+                  {
+                    "hostname": "",
+                    "path": "",
+                    "service": "http_status:404"
+                  }
+                ],
+                "origin_request": [],
+                "warp_routing": [
+                  {
+                    "enabled": true
+                  }
+                ]
+              }
+            ],
+            "id": "f401a998-4926-4897-b865-38c99eebb97e",
+            "tunnel_id": "f401a998-4926-4897-b865-38c99eebb97e"
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "account_id"
+              }
+            ]
+          ],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.cloudflare.cloudflare_argo_tunnel.zt-demo-srv-win02",
+            "module.cloudflare.cloudflare_record.zt-demo-rdp02-dns",
+            "module.cloudflare.random_id.tunnel_secret"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.cloudflare",
+      "mode": "managed",
+      "type": "random_id",
+      "name": "tunnel_secret",
+      "provider": "provider[\"registry.terraform.io/hashicorp/random\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "b64_std": "zZex5qGXoe9owTynsBdgLBQ0LxqfpB3ukoDXW3+lC6E=",
+            "b64_url": "zZex5qGXoe9owTynsBdgLBQ0LxqfpB3ukoDXW3-lC6E",
+            "byte_length": 32,
+            "dec": "92992155693259918000233663529312615163074601449653184920541857667443652365217",
+            "hex": "cd97b1e6a197a1ef68c13ca7b017602c14342f1a9fa41dee9280d75b7fa50ba1",
+            "id": "zZex5qGXoe9owTynsBdgLBQ0LxqfpB3ukoDXW3-lC6E",
+            "keepers": null,
+            "prefix": null
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
