@@ -15,8 +15,8 @@ cloudflare_email            = "mmajunke@cloudflare.com"
 # ---- GCP PROVIDER ---- #
 service_account_path        = "/Users/mmajunke/.config/gcloud/application_default_credentials.json"
 project                     = "globalse-198312"
-region                      = "europe-west1"
-zone                        = "europe-west1-b"
+region                      = "europe-west3"
+zone                        = "europe-west3-b"
 prefix                      = "mmajunke"
 name                        = "zt-demo"
 owner                       = "mmajunke"
@@ -25,5 +25,6 @@ machine_type                = "e2-standard-2"
 machine_type2               = "e2-medium"
 disk_type                   = "pd-balanced"
 disk_size                   = 50
+#image                       = "windows-server-2016-dc-v20230712"
 image                       = "windows-server-2022-dc-v20221109"
 enable_monitoring           = false
