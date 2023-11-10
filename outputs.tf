@@ -13,5 +13,6 @@ output "tunnel_token02" {
 
 output "tunnel_secret" {
   value = module.cloudflare.tunnel_secret
+  sensitive = true
 }
 

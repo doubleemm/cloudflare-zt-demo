@@ -9,5 +9,6 @@ output "tunnel_token02" {
 }
 
 output "tunnel_secret" {
-  value = random_id.tunnel_secret
+  value = random_password.tunnel_secret.result
+  sensitive = true
 }

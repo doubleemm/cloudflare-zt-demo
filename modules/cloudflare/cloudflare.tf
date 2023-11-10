@@ -12,21 +12,21 @@ provider "cloudflare" {
 }
 
 # Generate a random secret for the tunnel
-resource "random_id" "tunnel_secret" {
-  byte_length  = 32
+resource "random_password" "tunnel_secret" {
+  length  = 64
 }
 
 ### Create CF Tunnel
 resource "cloudflare_argo_tunnel" "zt-demo-srv-win01" {
   account_id = var.cloudflare_account_id
   name       = var.cloudflare_tunnel01_name
-  secret     = random_id.tunnel_secret.b64_std
+  secret     = base64sha256(random_password.tunnel_secret.result)
 }
 
 resource "cloudflare_argo_tunnel" "zt-demo-srv-win02" {
   account_id = var.cloudflare_account_id
   name       = var.cloudflare_tunnel02_name
-  secret     = random_id.tunnel_secret.b64_std
+  secret     = base64sha256(random_password.tunnel_secret.result)
 }
 
 ### Create DNS for the tunnel
